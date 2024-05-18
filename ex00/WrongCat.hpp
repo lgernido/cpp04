@@ -26,7 +26,6 @@ class WrongCat : public WrongAnimal
         WrongCat& operator=(const WrongCat& aWrongCat);
 
         WrongCat(std::string type);
-        // void makeSound(void) const;
 
     protected :
 

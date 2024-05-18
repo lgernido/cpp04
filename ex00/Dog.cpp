@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:18:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 10:42:05 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:10:53 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 Dog::Dog() : Animal()
 {
+    type = "Dog";
     std::cout << BOLD << "Dog" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;   
 }

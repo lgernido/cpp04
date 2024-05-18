@@ -18,6 +18,7 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
+    type = "Wrong Cat";
     std::cout << BOLD << "WrongCat" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;   
 }
@@ -56,11 +57,3 @@ WrongCat& WrongCat::operator=(const WrongCat& aWrongCat)
     this->type = aWrongCat.getType();
     return(*this);
 }
-
-/*PUBLIC METHODS*/
-
-// void WrongCat::makeSound(void) const
-// {
-//     std::cout << MAGENTA << BOLD << "* soft meowing and purring *" << RESET << std::endl;
-//     std::cout << std::endl;
-// }
