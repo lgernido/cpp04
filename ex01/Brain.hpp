@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:49 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 12:38:03 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:30:06 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Brain
         Brain(const Brain& aBrain);
 
         Brain& operator=(const Brain& aBrain);
+
+        // std::string getIdeas(void) const[100];
 
     protected : 
 

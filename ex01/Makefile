@@ -4,7 +4,8 @@
 SRC_FOLDER	= 
 SRC_FOLDER_BONUS = 
 
-SRC_FILES	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC_FILES	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp \
+Brain.cpp
 
 SRC_FILES_BONUS = 
 BUILD = build/
@@ -20,7 +21,7 @@ NAME		= a.out
 CC			= c++
 CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
-INCLUDE	= Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+INCLUDE	= Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
 INCLUDE_BONUS = 
 INCLUDE_PATH = includes/
 

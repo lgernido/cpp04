@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:19:11 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 11:39:10 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:23:24 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal
 {
     public :
         Cat();
-        ~Cat();
+        virtual ~Cat();
 
         Cat(const Cat& aCat);
 
@@ -33,7 +33,7 @@ class Cat : public Animal
 
     private :
         std::string name;
-        Brain *brain;
+        class Brain *brain;
 };
 
 #endif

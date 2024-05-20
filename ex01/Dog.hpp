@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:19:08 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 11:39:00 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:20:38 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal
 {
     public :
         Dog();
-        ~Dog();
+        virtual ~Dog();
 
         Dog(const Dog& aDog);
 

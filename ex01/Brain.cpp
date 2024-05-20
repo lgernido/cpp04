@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 11:37:18 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:30:36 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ Brain::~Brain()
 //Copy constructor
 Brain::Brain(const Brain& aBrain)
 {
+    // this->ideas = aBrain.getIdeas();
+    (void)aBrain;
     std::cout << BOLD << "Brain" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
 }
@@ -46,3 +48,12 @@ Brain& Brain::operator=(const Brain& aBrain)
     
     return(*this);
 }
+
+/*PUBLIC METHODS*/
+
+//Getters
+
+// std::string Brain::getIdeas(void) const[100]
+// {
+//     return (this->ideas);
+// }
