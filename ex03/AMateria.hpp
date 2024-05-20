@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 10:05:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:04:14 by lgernido         ###   ########.fr       */
+/*   Created: 2024/05/20 15:05:47 by lgernido          #+#    #+#             */
+/*   Updated: 2024/05/20 15:15:27 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
-
-#include <string>
 #include <iostream>
+#include <string>
 
 #define RED		"\033[0;31m"
 #define GREEN	"\033[0;32m"
@@ -29,27 +26,25 @@
 #define ITALIC     "\033[3m"
 #define RESET      "\033[0m"
 
-class Animal
+class AMateria
 {
     public :
-        Animal();
-        virtual ~Animal();
+        AMateria();
+        ~AMateria();
         
-        Animal(const Animal& anAnimal);
+        AMateria(std::string const type);
+        AMateria(const AMateria& copy);
 
-        Animal& operator=(const Animal& anAnimal);
+        AMateria& operator=(const AMateria& copy);
+        
+        std::string const& getType()const;
 
-        virtual void makeSound(void)const;
-        std::string getType(void)const;
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
 
     protected :
         std::string type;
-    
-    private :
         
-};
+    private : 
 
-
-
-
-#endif
+}

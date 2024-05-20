@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:05:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 12:51:07 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/19 10:56:14 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 Animal::Animal()
 {
+    this->type = "undefined animal";
     std::cout << BOLD << "Animal" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;   
 }
