@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:35:35 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:03:45 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,24 @@
 int main(void)
 {
     {
-        const Animal* j = new Animal();
-        const Animal* i = new Cat();
-        delete j;//should not create a leak
-        delete i;
+        /*Testing Animal instance*/
+
+        // Animal* doom_to_fail = new Animal();
+
+        // doom_to_fail->makeSound();
+        // delete doom_to_fail;
     }
     {
+        /*Testing Cat and Dog instances*/
+
+        Dog *doggo = new Dog();
+        Cat *kitty = new Cat();
+
+        kitty->makeSound();
+        doggo->makeSound();
+
+        delete doggo;
+        delete kitty;
     }
 
     return 0;

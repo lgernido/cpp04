@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:18:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 12:36:51 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:44:05 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,14 @@ void Dog::makeSound(void)const
 {
     std::cout << YELLOW << BOLD << "* aggressive barking and growling *" << RESET << std::endl;
     std::cout << std::endl;
+}
+
+std::string Dog::getIdeas(int index)
+{
+    return (this->brain->getIdeas(index));
+}
+
+void Dog::setIdeas(std::string idea)
+{
+    this->brain->setIdeas(idea);
 }

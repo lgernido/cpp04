@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:49 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:30:06 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:44:23 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Animal.hpp"
 #include "Cat.hpp"
+#include <cstring>
 
 
 class Brain
@@ -27,7 +28,8 @@ class Brain
 
         Brain& operator=(const Brain& aBrain);
 
-        // std::string getIdeas(void) const[100];
+        void setIdeas(std::string idea);
+        std::string getIdeas(int index);
 
     protected : 
 
