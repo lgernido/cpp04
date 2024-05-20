@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:30:36 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:48:10 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 Brain::Brain()
 {
+    for (int i = 0; i < 100; i++)
+        ideas[i] = "I have no idea what to do";
     std::cout << BOLD << "Brain" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;   
 }
@@ -53,7 +55,23 @@ Brain& Brain::operator=(const Brain& aBrain)
 
 //Getters
 
-// std::string Brain::getIdeas(void) const[100]
-// {
-//     return (this->ideas);
-// }
+std::string Brain::getIdeas(int index)
+{
+    return (this->ideas[index]);
+}
+
+//Setter
+
+void Brain::setIdeas(std::string idea)
+{
+    for (int i = 0; i < 100; i++)
+    {
+        if (this->ideas[i].compare("I have no idea what to do") != 0)
+            i++;
+        else
+        {
+            this->ideas[i] = idea;
+            break;
+        }
+    }
+}

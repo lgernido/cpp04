@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:19:08 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:20:38 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:29:21 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Dog : public Animal
 
         Dog(std::string type);
         void makeSound(void)const;
+        void setIdeas(std::string idea);
+        std::string getIdeas(int index);
 
     protected :
 
