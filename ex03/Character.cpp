@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:47:20 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 09:12:27 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:17:46 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@
 //Default constructor
 Character::Character()
 {
-    
+    for (int i = 0; i < 4; i++)
+    {
+        (this->inventory)[i] = 0;
+    }
+    std::cout << BOLD << "Character" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
+    std::cout << std::endl; 
 }
 
 //Destructor
@@ -28,12 +33,13 @@ Character::~Character()
         if (this->inventory[i])
             delete this->inventory[i];
     }
+    std::cout << BOLD << "Character" << RESET << ITALIC << " destructor" << RESET << " called" << std::endl;
+    std::cout << std::endl;
 }
 
 //Copy constructor
 Character::Character(Character const& copy)
 {
-    this->name = copy.getName();
     for (int i = 0; i < 4; i++)
     {
         if(copy.inventory[i])
@@ -41,14 +47,17 @@ Character::Character(Character const& copy)
             this->inventory[i] = copy.inventory[i]->clone();
         }
     }
+    std::cout << BOLD << "Character" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
+    std::cout << std::endl;
 }
 
 //Name constructor
-Character::Character(std::string name) 
+Character::Character(std::string name) : name(name)
 {
-    this->name = name;
     for(int i = 0; i < 4; i++)
-        this->inventory[i] = 0;
+        (this->inventory)[i] = 0;
+    std::cout << BOLD << "Character" << RESET << ITALIC << " name constructor" << RESET << " called" << std::endl;
+    std::cout << std::endl;
 }
 
 /*OPERATOR OVERLOAD*/
@@ -62,6 +71,7 @@ Character& Character::operator=(Character const& copy)
         if (copy.inventory[i])
             this->inventory[i] = copy.inventory[i]->clone();
     }
+    return (*this);
 }
 
 /*PUBLIC METHODS*/

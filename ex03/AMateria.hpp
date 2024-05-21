@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:47 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 08:40:13 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:17:23 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
 
 #define RED		"\033[0;31m"
 #define GREEN	"\033[0;32m"
@@ -29,11 +30,13 @@
 #define ITALIC     "\033[3m"
 #define RESET      "\033[0m"
 
+class ICharacter;
+
 class AMateria
 {
     public :
         AMateria();
-        ~AMateria();
+        virtual ~AMateria();
         
         AMateria(std::string const type);
         AMateria(const AMateria& copy);

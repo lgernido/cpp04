@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:39:43 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 09:05:42 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:17:01 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+
 
 class Character : public ICharacter
 {
@@ -36,7 +37,7 @@ class Character : public ICharacter
     private :
         AMateria *inventory[4];
         std::string const name;
-}
+};
 
 
 

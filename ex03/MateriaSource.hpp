@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 09:16:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 09:50:27 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:46:05 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class MateriaSource : public IMateriaSource
         AMateria* createMateria(std::string const& type);
         
     private :
-        AMateria *inventory[4];
+        AMateria* inventory[4];
 };
 
 #endif
