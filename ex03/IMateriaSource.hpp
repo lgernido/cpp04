@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:20:24 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 08:40:42 by lgernido         ###   ########.fr       */
+/*   Created: 2024/05/21 09:14:08 by lgernido          #+#    #+#             */
+/*   Updated: 2024/05/21 09:16:15 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria
+class IMateriaSource
 {
     public :
-        Ice();
-        ~Ice();
+        virtual ~IMateriaSource(){};
+        virtual void learnMateria(AMateria*) = 0;
+        virtual AMateria* createMateria(std::string const& type) = 0;
+}
 
-        Ice(const Ice& copy);
-        
-        Ice& operator=(const Ice& copy);
 
-        std::string const& getType() const;
-        Ice *clone() const;
-        void use(ICharacter& target);
-
-    protected :
-
-    private :
-        std::string type;
-};
 
 #endif

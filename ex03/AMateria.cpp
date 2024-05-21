@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 16:02:18 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 08:29:45 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,11 @@ AMateria& AMateria::operator=(const AMateria& copy)
 }
 
 /*PUBLIC METHODS*/
-.
 
+void AMateria::use(ICharacter& target)
+{
+    std::cout << "AMateria used on " << target.getName() << std::endl;
+}
 
 //Getter
 std::string const& AMateria::getType()const

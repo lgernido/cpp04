@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:20:24 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 08:40:42 by lgernido         ###   ########.fr       */
+/*   Created: 2024/05/21 09:16:36 by lgernido          #+#    #+#             */
+/*   Updated: 2024/05/21 09:50:27 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Ice : public AMateria
+class MateriaSource : public IMateriaSource
 {
     public :
-        Ice();
-        ~Ice();
-
-        Ice(const Ice& copy);
+        MateriaSource();
+        MateriaSource(MateriaSource const& copy);
+        ~MateriaSource();
+        MateriaSource& operator=(MateriaSource const& copy);
+        void learnMateria(AMateria *m);
+        AMateria* createMateria(std::string const& type);
         
-        Ice& operator=(const Ice& copy);
-
-        std::string const& getType() const;
-        Ice *clone() const;
-        void use(ICharacter& target);
-
-    protected :
-
     private :
-        std::string type;
+        AMateria *inventory[4];
 };
 
 #endif

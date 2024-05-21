@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:20:22 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 15:25:09 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 09:04:55 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,24 @@ Ice& Ice::operator=(const Ice& copy)
         return (*this);
     this->type = copy.getType();
     return(*this);
+}
+
+/*PUBLIC METHODS*/
+
+//Getter
+
+std::string Ice::getType()const
+{
+    return(this->type);
+}
+
+Ice *Ice::clone()const
+{
+    Ice *new_ice = new Ice;
+    return(new_ice);
+}
+
+void Ice::use(ICharacter& target)
+{
+    std::cout << " * shoots an ice bolt at  " << target.getName() << std::endl;
 }

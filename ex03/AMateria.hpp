@@ -6,9 +6,12 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:47 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 15:15:27 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 08:40:13 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iostream>
 #include <string>
@@ -47,4 +50,6 @@ class AMateria
         
     private : 
 
-}
+};
+
+#endif

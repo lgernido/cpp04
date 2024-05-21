@@ -4,7 +4,7 @@
 SRC_FOLDER	= 
 SRC_FOLDER_BONUS = 
 
-SRC_FILES	= 
+SRC_FILES	= AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp main.cpp
 
 SRC_FILES_BONUS = 
 BUILD = build/
@@ -20,7 +20,7 @@ NAME		= a.out
 CC			= c++
 CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
-INCLUDE	= 
+INCLUDE	= AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp
 INCLUDE_BONUS = 
 INCLUDE_PATH = includes/
 

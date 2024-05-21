@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:25:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 15:27:56 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/21 09:05:32 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,23 @@ Cure& Cure::operator=(const Cure& copy)
         return (*this);
     this->type = copy.getType();
     return(*this);
+}
+
+/*PUBLIC METHODS*/
+
+//Getter
+std::string const& Cure::getType()const
+{
+    return(this->type);
+}
+
+Cure *Cure::clone()const
+{
+    Cure *new_cure = new Cure;
+    return(new_cure);
+}
+
+void Cure::use(ICharacter& target)
+{
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
