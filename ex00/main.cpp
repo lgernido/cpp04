@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:03:41 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:05:24 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,42 +19,44 @@
 int main(void)
 {
     {
-        // const Animal* meta = new Animal();
-        // const Animal* j = new Dog();
-        // const Animal* i = new Cat();
-        // std::cout << j->getType() << " " << std::endl;
-        // std::cout << i->getType() << " " << std::endl;
-        // i->makeSound(); //will output the cat sound!
-        // j->makeSound();
-        // meta->makeSound();
-    }
-    {
-        // const WrongAnimal* meta = new WrongAnimal();
-        // const Animal* j = new Dog();
-        // const WrongCat* i = new WrongCat();
-        // // std::cout << j->getType() << " " << std::endl;
-        // // std::cout << i->getType() << " " << std::endl;
-        // i->makeSound(); //will output the cat sound!
-        // j->makeSound();
-        // meta->makeSound(); 
-    }
-    {
-        // Animal random = Animal();
-        // Dog dog =  Dog();
-        // Cat cat = Cat();
+        std::cout << GREEN <<"BASIC TEST FROM THE SUBJECT:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+        const Animal* meta = new Animal();
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << i->getType() << " " << std::endl;
+        i->makeSound(); //will output the cat sound!
+        j->makeSound();
+        meta->makeSound();
 
-        // std::cout << BOLD << random.getType() << " : "<< RESET;
-        // random.makeSound();
-        // std::cout << std::endl;
-        // std::cout << BOLD << dog.getType() << " : " << RESET;
-        // dog.makeSound();
-        // std::cout << std::endl;
-        // std::cout << BOLD << cat.getType() << " : "<< RESET;
-        // cat.makeSound();
-        // std::cout << std::endl;
+        /*Added the deletes to prevent leaks*/
+        delete meta;
+        delete j;
+        delete i;
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
 
     }
     {
+        std::cout << GREEN <<"TESTING THE WRONG ANIMAL:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+        const WrongAnimal* meta = new WrongAnimal();
+        const Animal* j = new Dog();
+        const WrongCat* i = new WrongCat();
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << i->getType() << " " << std::endl;
+        i->makeSound(); //will output wrong sound
+        j->makeSound();
+        meta->makeSound();
+        
+        delete meta;
+        delete j;
+        delete i;
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
+    }
+    {
+        std::cout  << GREEN <<"OTHER TEST :" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
         Animal* random = new Animal();
         Animal* dog = new Dog();
         Animal* cat = new Cat();
@@ -72,6 +74,7 @@ int main(void)
         delete random;
         delete dog;
         delete cat;
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
     }
 
     return 0;
