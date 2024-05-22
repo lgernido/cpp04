@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:25:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 12:09:32 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:18:28 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,20 @@ Cure::~Cure()
 
 //Copy constructor
 
-Cure::Cure(const Cure& copy)
+Cure::Cure(const Cure& other)
 {
-    this->type = copy.getType();
+    this->type = other.getType();
     std::cout << BOLD << "Cure" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
 }
 
 /*OPERATOR OVERLOARD*/
 
-Cure& Cure::operator=(const Cure& copy)
+Cure& Cure::operator=(const Cure& other)
 {
-    if (this == &copy)
+    if (this == &other)
         return (*this);
-    this->type = copy.getType();
+    this->type = other.getType();
     return(*this);
 }
 

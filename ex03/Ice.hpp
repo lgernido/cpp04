@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:20:24 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 12:09:57 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:18:43 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Ice : public AMateria
         Ice();
         ~Ice();
 
-        Ice(const Ice& copy);
+        Ice(const Ice& other);
         
-        Ice& operator=(const Ice& copy);
+        Ice& operator=(const Ice& other);
 
         std::string const& getType() const;
         AMateria *clone() const;

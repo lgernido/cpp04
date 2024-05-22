@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:20:22 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 12:09:45 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:19:05 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,20 @@ Ice::~Ice()
 
 //Copy constructor
 
-Ice::Ice(const Ice& copy)
+Ice::Ice(const Ice& other)
 {
-    this->type = copy.getType();
+    this->type = other.getType();
     std::cout << BOLD << "Ice" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
 }
 
 /*OPERATOR OVERLOARD*/
 
-Ice& Ice::operator=(const Ice& copy)
+Ice& Ice::operator=(const Ice& other)
 {
-    if (this == &copy)
+    if (this == &other)
         return (*this);
-    this->type = copy.getType();
+    this->type = other.getType();
     return(*this);
 }
 

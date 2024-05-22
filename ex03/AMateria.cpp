@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 09:33:38 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:16:37 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ AMateria::~AMateria()
 
 //Copy constructor
 
-AMateria::AMateria(const AMateria& copy)
+AMateria::AMateria(const AMateria& other)
 {
-    this->type = copy.getType();
+    this->type = other.getType();
     std::cout << BOLD << "AMateria" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
 }
@@ -49,11 +49,11 @@ AMateria::AMateria(std::string const type) : type(type)
 
 /*OPERATOR OVERLOARD*/
 
-AMateria& AMateria::operator=(const AMateria& copy)
+AMateria& AMateria::operator=(const AMateria& other)
 {
-    if (this == &copy)
+    if (this == &other)
         return (*this);
-    this->type = copy.getType();
+    this->type = other.getType();
     return(*this);
 }
 

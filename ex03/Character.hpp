@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:39:43 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 12:00:16 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:17:10 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Character : public ICharacter
         ~Character();
 
         Character(std::string name);
-        Character(Character const& copy);
+        Character(Character const& other);
 
         Character& operator=(Character const& other);
 

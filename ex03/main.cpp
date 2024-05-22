@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:26:33 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 13:09:47 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:20:44 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,8 @@ int main()
 		std::cout << std::endl << GREEN "TESTING COPY OPERATOR:" << std::endl;
 	    std::cout << "---------------------------------------------------" RESET << std::endl;
         MateriaSource *materia_book2 = new MateriaSource(*materia_book);
-		std::cout << std::endl << GREEN "OVERLOADING MATERIASOURCE:" << std::endl;
+		
+		std::cout << std::endl << GREEN "OVERLOADING MATERIA SOURCE:" << std::endl;
 	    std::cout << "---------------------------------------------------" RESET << std::endl;
         materia_book2->learnMateria(new Ice());
 		AMateria *ice = new Ice();

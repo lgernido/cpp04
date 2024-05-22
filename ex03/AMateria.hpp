@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:47 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 12:17:23 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:16:09 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ class AMateria
         virtual ~AMateria();
         
         AMateria(std::string const type);
-        AMateria(const AMateria& copy);
+        AMateria(const AMateria& other);
 
-        AMateria& operator=(const AMateria& copy);
+        AMateria& operator=(const AMateria& other);
         
         std::string const& getType()const;
 

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 09:19:50 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 13:13:26 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:20:02 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ MateriaSource::MateriaSource()
 {
     for (int i = 0; i < 4; i++)
     {
-        this->inventory[i] = 0;
+        (this->inventory)[i] = 0;
     }
     std::cout << BOLD << "Materia source" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl; 
@@ -37,28 +37,28 @@ MateriaSource::~MateriaSource()
 }
 
 //Copy constructor
-MateriaSource::MateriaSource(MateriaSource const& copy)
+MateriaSource::MateriaSource(MateriaSource const& other)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if (copy.inventory[i])
-        {
-            this->inventory[i] = (copy.inventory[i])->clone();
-        }
-    }
     std::cout << BOLD << "Materia source" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl; 
+    for (int i = 0; i < 4; i++)
+    {
+        if(other.inventory[i] != 0)
+            this->inventory[i] = other.inventory[i]->clone();
+        else
+            this->inventory[i] = 0;
+    }
 }
 
 /*OPERATOR OVERLOAD*/
-MateriaSource& MateriaSource::operator=(MateriaSource const& copy)
+MateriaSource& MateriaSource::operator=(MateriaSource const& other)
 {
     for (int i = 0; i < 4; i++)
     {
         if (this->inventory[i])
             delete this->inventory[i];
-        if (copy.inventory[i])
-            this->inventory[i] = (copy.inventory[i])->clone();
+        if (other.inventory[i])
+            this->inventory[i] = (other.inventory[i])->clone();
     }
     return (*this);
 }
@@ -68,7 +68,7 @@ MateriaSource& MateriaSource::operator=(MateriaSource const& copy)
 void MateriaSource::learnMateria(AMateria *m)
 {
     int i = 0;
-    while((this->inventory)[i] != 0 && i < 4)
+    while(i < 4 && (this->inventory)[i] != 0)
         i++;
     if (i >= 4)
     {

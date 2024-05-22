@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:25:54 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 12:09:22 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:17:35 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Cure : public AMateria
         Cure();
         ~Cure();
 
-        Cure(const Cure& copy);
+        Cure(const Cure& other);
         
-        Cure& operator=(const Cure& copy);
+        Cure& operator=(const Cure& other);
         
         std::string const& getType()const ;
         AMateria *clone() const;
