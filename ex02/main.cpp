@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 15:03:45 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:49:23 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,19 @@ int main(void)
 {
     {
         /*Testing Animal instance*/
+        /*This test won't compile because the animal class can't be called*/
 
-        // Animal* doom_to_fail = new Animal();
+        Animal* doom_to_fail = new Animal();
 
-        // doom_to_fail->makeSound();
-        // delete doom_to_fail;
+        doom_to_fail->makeSound();
+        delete doom_to_fail;
     }
     {
         /*Testing Cat and Dog instances*/
+        /*This test works because Dog and Cat classes can be called*/
 
-        Dog *doggo = new Dog();
-        Cat *kitty = new Cat();
+        Animal *doggo = new Dog();
+        Animal *kitty = new Cat();
 
         kitty->makeSound();
         doggo->makeSound();

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:05:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 15:00:33 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:23:55 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@
 class Animal
 {
     public :
+        Animal();
         virtual ~Animal();
         
         Animal(const Animal& anAnimal);
 
         Animal& operator=(const Animal& anAnimal);
 
-        virtual void makeSound(void)const;
+        virtual void makeSound(void)const = 0;
         std::string getType(void)const;
 
     protected :
-        Animal();
         std::string type;
     
     private :
