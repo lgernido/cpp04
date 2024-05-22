@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 14:58:30 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:21:23 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,39 @@ int main(void)
 {
     {
         /*Testing basic initialization of all the classes (from the subject)*/
-        
-        // const Animal* j = new Dog();
-        // const Animal* i = new Cat();
-        // delete j;//should not create a leak
-        // delete i;
+        std::cout << GREEN <<"BASIC TEST FROM THE SUBJECT:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+          
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
+        delete j;//should not create a leak
+        delete i;
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
     }
     {
         /*Required test by the subject*/
+        std::cout << GREEN <<"FILLING A TAB WITH HALF CAT/HALF DOG:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
         
-        // Animal* house[10];
-        // for (int i = 0; i < 5; i++)
-        //     house[i] = new Dog();
-        // for (int i = 5; i < 10; i++)
-        //     house[i] = new Cat();
-        // for (int i = 0; i < 10; i++)
-        //     house[i]->makeSound();
-        // for (int i = 0; i < 10; i++)
-        //     delete house[i];
+        Animal* house[10];
+        for (int i = 0; i < 5; i++)
+            house[i] = new Dog();
+        for (int i = 5; i < 10; i++)
+            house[i] = new Cat();
+        for (int i = 0; i < 10; i++)
+            house[i]->makeSound();
+        for (int i = 0; i < 10; i++)
+        {
+            delete house[i];
+        }
+            
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
     }
     {
         /*Testing ideas attribute*/
         
+        std::cout << GREEN <<"TESTING IDEAS ATTRIBUTES:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
         Dog* doggo = new Dog();
 
         doggo->setIdeas("Attack the postman");
@@ -53,6 +64,7 @@ int main(void)
         std::cout << std::endl;
 
         delete doggo;
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
         
     }
 
