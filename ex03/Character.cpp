@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:47:20 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 12:17:46 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:53:14 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ Character::~Character()
 }
 
 //Copy constructor
-Character::Character(Character const& copy)
+Character::Character(Character const& other) : name(other.getName() + "_copy")
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if(copy.inventory[i])
-        {
-            this->inventory[i] = copy.inventory[i]->clone();
-        }
-    }
     std::cout << BOLD << "Character" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        if (other.inventory[i] != 0)
+            this->inventory[i] = other.inventory[i]->clone();
+        else
+            this->inventory[i] = 0;
+    }
 }
 
 //Name constructor
@@ -62,21 +62,22 @@ Character::Character(std::string name) : name(name)
 
 /*OPERATOR OVERLOAD*/
 
-Character& Character::operator=(Character const& copy)
+Character& Character::operator=(Character const& other)
 {
     for(int i = 0; i < 4; i++)
     {
         if (this->inventory[i])
             delete this->inventory[i];
-        if (copy.inventory[i])
-            this->inventory[i] = copy.inventory[i]->clone();
+        if (other.inventory[i])
+            this->inventory[i] = other.inventory[i]->clone();
     }
     return (*this);
 }
 
 /*PUBLIC METHODS*/
 
-//Getter
+//Getterearned ice materia * 
+
 
 std::string const& Character::getName() const
 {
@@ -88,34 +89,40 @@ void Character::equip(AMateria *m)
     int i = 0;
     if (!m)
     {
-        std::cout << this->name << " tried to equip a materia that doesn't exist" << std::endl;
+        std::cout << RED << this->name << " tried to equip a materia that doesn't exist" << RESET << std::endl;
+        std::cout << std::endl;
         return ;
     }
-    while((this->inventory[i]) != 0 && i < 4)
+    while((this->inventory)[i] != 0 && i < 4)
         i++;
     if (i >= 4)
     {
-        std::cout << this->name << " can't equipe more than 4 materias" << std::endl;
+        std::cout << RED << BOLD << this->name << " can't equipe more than 4 materias"  << RESET << std::endl;
+        std::cout << std::endl;
         return;
     }
-    this->inventory[i] = m;
-    std::cout << this->name << " equiped " << m->getType() << " materia" << std::endl;
+    (this->inventory)[i] = m;
+    std::cout << YELLOW << BOLD << this->name << " equiped " << m->getType() << " materia"  << RESET << std::endl;
+    std::cout << std::endl;
 }
 
 void Character::unequip(int idx)
 {
     if (idx < 0 || idx >= 4)
     {
-        std::cout << this->name << " tried to unequip nothing at slot " << idx << std::endl;
+        std::cout << RED << this->name << " tried to unequip nothing at slot " << idx << RESET <<std::endl;
+        std::cout << std::endl;
     } 
     else if (!(this->inventory)[idx])
     {
-        std::cout << this->name << " tried to unequiped nothing at slot " << idx << std::endl;
+        std::cout << RED << this->name << " tried to unequip nothing at slot " << idx << RESET << std::endl;
+        std::cout << std::endl;
     }
     else
     {
         AMateria *materia = (this->inventory)[idx];
-        std::cout << this->name << " unequiped " << materia->getType() << " at slot " << idx << std::endl;
+        std::cout << YELLOW << BOLD << this->name << " unequiped " << materia->getType() << " at slot " << idx << RESET << std::endl;
+        std::cout << std::endl;
         (this->inventory)[idx] = 0;
     }
 }
@@ -125,9 +132,9 @@ void Character::use(int idx, ICharacter& target)
     std::string name = this->getName();
     if (idx < 0 || idx >= 4 || !(this->inventory)[idx])
     {
-        std::cout << "nothing found to use at slot " << idx << std::endl;
+        std::cout << RED << "nothing found to use at slot " << idx << RESET << std::endl;
         return ;
     }
-    std::cout << name;
+    std::cout  << BOLD << name;
     ((this->inventory)[idx])->use(target);
 }

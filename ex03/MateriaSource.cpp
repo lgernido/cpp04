@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 09:19:50 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 16:36:16 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:13:26 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ MateriaSource::MateriaSource(MateriaSource const& copy)
     {
         if (copy.inventory[i])
         {
-            this->inventory[i] = copy.inventory[i]->clone();
+            this->inventory[i] = (copy.inventory[i])->clone();
         }
     }
     std::cout << BOLD << "Materia source" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
@@ -58,7 +58,7 @@ MateriaSource& MateriaSource::operator=(MateriaSource const& copy)
         if (this->inventory[i])
             delete this->inventory[i];
         if (copy.inventory[i])
-            this->inventory[i] = copy.inventory[i]->clone();
+            this->inventory[i] = (copy.inventory[i])->clone();
     }
     return (*this);
 }
@@ -66,33 +66,36 @@ MateriaSource& MateriaSource::operator=(MateriaSource const& copy)
 /*PUBLIC METHODS*/
 
 void MateriaSource::learnMateria(AMateria *m)
-{   
+{
     int i = 0;
     while((this->inventory)[i] != 0 && i < 4)
         i++;
     if (i >= 4)
     {
-        std::cout << " Can't learn more than 4 materias" << std::endl;
+        std::cout << RED << BOLD << " Can't learn more than 4 materias" << RESET << std::endl;
+        std::cout << std::endl;
         return;
     }
-    if ((this->inventory)[])
     (this->inventory)[i] = m;
-    std::cout << BOLD << MAGENTA << " * learned " << m->getType() << " materia * " << RESET << std::endl;
+    std::cout << MAGENTA << BOLD << " * learned " << m->getType() << " materia * " << RESET << std::endl;
+    std::cout << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const& type)
 {
     int i = 0;
-    while(i < 4 && this->inventory[i] != 0 && this->inventory[i]->getType() != type)
+    while(i < 4 && (this->inventory)[i] != 0 && ((this->inventory)[i])->getType() != type)
     {
         i++;
     }
     if(i >= 4 || !(this->inventory)[i])
     {
-        std::cout << "Materia of type " << type << " doesn't exist" << std::endl;
+        std::cout << RED << "Materia of type " << type << " doesn't exist" << RESET << std::endl;
+        std::cout << std::endl;
         return NULL;
     }
-    std::cout << type << " learned" << std::endl;
+    std::cout << MAGENTA << BOLD << type << " created" << RESET << std::endl;
+    std::cout << std::endl;
     return ((this->inventory)[i]->clone());
 }
 

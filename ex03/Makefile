@@ -19,7 +19,7 @@ OBJ_FILES_BONUS = $(addprefix $(SRC_FOLDER_BONUS), $(SRC_FILES_BONUS:%.c=%.o))
 
 NAME		= a.out
 CC			= c++
-CFLAGS		= -Wall -Werror -Wextra -std=c++98
+CFLAGS		= -Wall -Werror -Wextra -g3 -std=c++98
 
 INCLUDE	= AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp\
 MateriaSource.hpp Character.hpp

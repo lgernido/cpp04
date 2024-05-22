@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:20:22 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 13:48:56 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:09:45 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 //Default Constructor
 
-Ice::Ice()
+Ice::Ice() : AMateria()
 {
-    this->type = "ice";
+    type = "ice";
     std::cout << BOLD << "Ice" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;  
 }
@@ -59,7 +59,7 @@ std::string const& Ice::getType()const
     return(this->type);
 }
 
-Ice *Ice::clone()const
+AMateria *Ice::clone()const
 {
     Ice *new_ice = new Ice;
     return (new_ice);
@@ -67,5 +67,5 @@ Ice *Ice::clone()const
 
 void Ice::use(ICharacter& target)
 {
-    std::cout << " * shoots an ice bolt at  " << target.getName()  << " * "<< std::endl;
+    std::cout << CYAN << BOLD << " * shoots an ice bolt at  " << target.getName()  << " * " << RESET << std::endl;
 }

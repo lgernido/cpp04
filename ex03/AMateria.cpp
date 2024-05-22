@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 11:39:27 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 09:33:38 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ AMateria::AMateria(const AMateria& copy)
 
 //Type constructor
 
-AMateria::AMateria(std::string const type)
+AMateria::AMateria(std::string const type) : type(type)
 {
-    this->type = type;
     std::cout << BOLD << "AMateria" << RESET << ITALIC << " type constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;  
 }

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:25:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/21 09:05:32 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:09:32 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 //Default Constructor
 
-Cure::Cure()
+Cure::Cure() : AMateria()
 {
-    this->type = "cure";
+    type = "cure";
     std::cout << BOLD << "Cure" << RESET << ITALIC << " default constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;  
 }
@@ -58,7 +58,7 @@ std::string const& Cure::getType()const
     return(this->type);
 }
 
-Cure *Cure::clone()const
+AMateria *Cure::clone()const
 {
     Cure *new_cure = new Cure;
     return(new_cure);
@@ -66,5 +66,5 @@ Cure *Cure::clone()const
 
 void Cure::use(ICharacter& target)
 {
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    std::cout << GREEN << BOLD << " * heals " << target.getName() << "'s wounds *" << RESET << std::endl;
 }
