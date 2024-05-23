@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:05:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:04:14 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:01:18 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ class Animal
         std::string getType(void)const;
 
     protected :
-        std::string type;
-    
+        std::string type;    
     private :
         
 };

@@ -14,12 +14,14 @@ BUILD = build/
 OBJ_FILES	= $(addprefix $(BUILD),$(SRC_FILES:%.cpp=%.o))
 OBJ_FILES_BONUS = $(addprefix $(SRC_FOLDER_BONUS), $(SRC_FILES_BONUS:%.c=%.o))
 
+DEP_FILES = $(OBJ_FILE:.o=.d)
+
 ###########################################################################
 #### ARGUMENTS
 
 NAME		= a.out
 CC			= c++
-CFLAGS		= -Wall -Werror -Wextra -std=c++98
+CFLAGS		= -Wall -Werror -Wextra -MMD -std=c++98
 
 INCLUDE	= Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
 INCLUDE_BONUS = 
@@ -41,6 +43,8 @@ $(NAME): $(OBJ_FILES) $(INCLUDES)
 	@$(CC) $(CFLAGS) $(OBJ_FILES) -o $(NAME)
 	@echo "$(MAGENTA)The modified: $?$(RESET)"
 	@echo "$(GREEN)Compilation success!$(RESET)"
+
+-include $(DEP_FILES)
 
 build/%.o: %.cpp
 	@mkdir -p ${BUILD}

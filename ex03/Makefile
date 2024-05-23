@@ -14,12 +14,14 @@ BUILD = build/
 OBJ_FILES	= $(addprefix $(BUILD),$(SRC_FILES:%.cpp=%.o))
 OBJ_FILES_BONUS = $(addprefix $(SRC_FOLDER_BONUS), $(SRC_FILES_BONUS:%.c=%.o))
 
+DEP_FILES = $(OBJ_FILES:.o=.d)
+
 ###########################################################################
 #### ARGUMENTS
 
 NAME		= a.out
 CC			= c++
-CFLAGS		= -Wall -Werror -Wextra -g3 -std=c++98
+CFLAGS		= -Wall -Werror -Wextra -MMD -g3 -std=c++98
 
 INCLUDE	= AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp\
 MateriaSource.hpp Character.hpp
@@ -42,6 +44,8 @@ $(NAME): $(OBJ_FILES) $(INCLUDES)
 	@$(CC) $(CFLAGS) $(OBJ_FILES) -o $(NAME)
 	@echo "$(MAGENTA)The modified: $?$(RESET)"
 	@echo "$(GREEN)Compilation success!$(RESET)"
+
+-include $(DEP_FILES)
 
 build/%.o: %.cpp
 	@mkdir -p ${BUILD}
