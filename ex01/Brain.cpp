@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/23 13:31:51 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:43:41 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Brain::Brain(const Brain& aBrain)
     std::cout << BOLD << "Brain" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
 }
-
 
 /*ASSIGNEMENT OPERATOR*/
 

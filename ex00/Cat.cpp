@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:18:42 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 13:10:38 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:42:46 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Cat::Cat(std::string type)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Cat& Cat::operator=(const Cat& aCat)
 {

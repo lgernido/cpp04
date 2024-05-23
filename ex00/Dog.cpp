@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:18:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 13:10:53 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:42:56 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Dog::Dog(std::string type)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Dog& Dog::operator=(const Dog& aDog)
 {

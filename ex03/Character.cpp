@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:47:20 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 13:53:14 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:45:52 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Character::Character(std::string name) : name(name)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOAD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Character& Character::operator=(Character const& other)
 {
@@ -76,8 +76,7 @@ Character& Character::operator=(Character const& other)
 
 /*PUBLIC METHODS*/
 
-//Getterearned ice materia * 
-
+//Getter 
 
 std::string const& Character::getName() const
 {

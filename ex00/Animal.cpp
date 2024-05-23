@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:05:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/19 10:56:14 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:42:30 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Animal::Animal(const Animal& anAnimal)
 }
 
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Animal& Animal::operator=(const Animal& anAnimal)
 {

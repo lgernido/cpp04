@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:05:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 16:16:37 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:45:22 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AMateria::AMateria(std::string const type) : type(type)
     std::cout << std::endl;  
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 AMateria& AMateria::operator=(const AMateria& other)
 {

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 09:19:50 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 16:20:02 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:46:53 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ MateriaSource::MateriaSource(MateriaSource const& other)
     }
 }
 
-/*OPERATOR OVERLOAD*/
+/*ASSIGNEMENT OPERATOR*/
 MateriaSource& MateriaSource::operator=(MateriaSource const& other)
 {
     for (int i = 0; i < 4; i++)

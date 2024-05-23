@@ -37,7 +37,6 @@ WrongAnimal::WrongAnimal(const WrongAnimal& aWrongAnimal)
     std::cout << std::endl;
 }
 
-
 /*ASSIGNEMENT OPERATOR*/
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& aWrongAnimal)

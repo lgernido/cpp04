@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:25:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 16:18:28 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:46:05 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cure::Cure(const Cure& other)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Cure& Cure::operator=(const Cure& other)
 {

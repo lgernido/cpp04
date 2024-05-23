@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:20:22 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 16:19:05 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:46:39 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Ice::Ice(const Ice& other)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNMENT OPERATOR*/
 
 Ice& Ice::operator=(const Ice& other)
 {

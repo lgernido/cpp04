@@ -38,7 +38,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& aWrongAnimal)
 }
 
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& aWrongAnimal)
 {
