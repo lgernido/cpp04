@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 08:26:33 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 16:20:44 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 09:00:22 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,98 +19,91 @@
 int main()
 {
 	{
-		// std::cout << std::endl << RED "---------------------------------------------------"<< std::endl;
-		// std::cout <<"BASIC TEST:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // std::cout << std::endl;
+		std::cout << std::endl << RED "---------------------------------------------------"<< std::endl;
+		std::cout <<"BASIC TEST:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    std::cout << std::endl;
 
-		// /*Checking the right order of constructors and how learning materias works*/
-	    // std::cout << GREEN "CONSTRUCTORS:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
+		/*Checking the right order of constructors and how learning materias works*/
+	    std::cout << GREEN "CONSTRUCTORS:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
 		
-		// IMateriaSource *materia_book = new MateriaSource();
-		// ICharacter *Lebron = new Character("Lebron");
+		IMateriaSource *materia_book = new MateriaSource();
+		ICharacter *Lebron = new Character("Lebron");
 		
-		// materia_book->learnMateria(new Ice());
-		// materia_book->learnMateria(new Cure());
-		// std::cout << std::endl;
+		materia_book->learnMateria(new Ice());
+		materia_book->learnMateria(new Cure());
+		std::cout << std::endl;
 		
-		// /*Creating materia based on the ones that have been learned.
-		// Trying to create a Materia that hasn't been learned*/
+		/*Creating materia based on the ones that have been learned.
+		Trying to create a Materia that hasn't been learned*/
 		
-	    // std::cout << GREEN "CREATE MATERIA:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // AMateria	*ice;
-	    // AMateria	*cure;
-	    // ice = materia_book->createMateria("ice");
-	    // Lebron->equip(ice);
-	    // cure = materia_book->createMateria("cure");
-	    // Lebron->equip(cure);
-	    // ice = materia_book->createMateria("block"); // null
-	    // Lebron->equip(ice);
-	    // std::cout << std::endl;
+	    std::cout << GREEN "CREATE MATERIA:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    AMateria	*ice;
+	    AMateria	*cure;
+	    ice = materia_book->createMateria("ice");
+	    Lebron->equip(ice);
+	    cure = materia_book->createMateria("cure");
+	    Lebron->equip(cure);
+	    ice = materia_book->createMateria("block"); // null
+	    Lebron->equip(ice);
+	    std::cout << std::endl;
 		
-		// /*Targeting a new Character with the Materias that are learned*/
+		/*Targeting a new Character with the Materias that are learned*/
 		
-	    // std::cout << GREEN "USE ON A NEW CHARACTER:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // ICharacter* Kobe = new Character("Kobe");
-	    // Lebron->use(0, *Kobe);
-	    // Lebron->use(1, *Kobe);
-	    // std::cout << std::endl;
-	    // Lebron->use(2, *Kobe); 
-	    // Lebron->use(-4, *Kobe);
-	    // Lebron->use(18, *Kobe);
-	    // std::cout << std::endl;
+	    std::cout << GREEN "USE ON A NEW CHARACTER:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    ICharacter* Kobe = new Character("Kobe");
+	    Lebron->use(0, *Kobe);
+	    Lebron->use(1, *Kobe);
+	    std::cout << std::endl;
+	    Lebron->use(2, *Kobe); 
+	    Lebron->use(-4, *Kobe);
+	    Lebron->use(18, *Kobe);
+	    std::cout << std::endl;
 		
-	    // std::cout << GREEN "DEEP COPY CHARACTER:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // Character	*Magic = new Character("Magic");
-	    // Character	*Magic_copy = new Character(*Magic);
-	    // std::cout << std::endl; 
+	    std::cout << GREEN "DEEP COPY CHARACTER:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    Character	*Magic = new Character("Magic");
+	    Character	*Magic_copy = new Character(*Magic);
+	    std::cout << std::endl; 
 		
-	    // /*Deep copy vs its source character*/
+	    /*Deep copy vs its source character*/
 		
-	    // std::cout << GREEN "DEEP COPY VS SOURCE:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // Magic->unequip(0); // this shows that they have different materia pointers equipped
-	    // Magic_copy->equip(cure);
-	    // Magic_copy->equip(ice);
-	    // std::cout << std::endl; 
+	    std::cout << GREEN "DEEP COPY VS SOURCE:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    Magic->unequip(0); // this shows that they have different materia pointers equipped
+	    Magic_copy->equip(cure);
+	    std::cout << std::endl; 
 
-	    // Magic->use(0, *Kobe);
-	    // Magic->use(1, *Kobe);
-	    // Magic->use(2, *Kobe);
-	    // Magic->use(3, *Kobe);
-	    // std::cout << std::endl;
-	    // Magic_copy->use(0, *Kobe);
-	    // Magic_copy->use(1, *Kobe);
-	    // Magic_copy->use(2, *Kobe);
-	    // Magic_copy->use(3, *Kobe);
-	    // std::cout << std::endl; 
+	    Magic->use(0, *Kobe);
+	    std::cout << std::endl;
+	    Magic_copy->use(0, *Kobe);
+	    std::cout << std::endl; 
 
-		// /*Testing the unequip function */
-	    // std::cout << GREEN "UNEQUIP:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // Lebron->unequip(-1); // unequip an empty / non existing slot in inventory
-	    // Lebron->unequip(18);
-	    // Lebron->unequip(3);
-	    // std::cout << std::endl;
-	    // Lebron->use(1, *Magic);
-	    // Lebron->unequip(1); // Unequip a valid slot in inventory (cure unequipped)
-	    // Lebron->use(1, *Magic);
-	    // std::cout << std::endl; 
+		/*Testing the unequip function */
+	    std::cout << GREEN "UNEQUIP:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    Lebron->unequip(-1); // unequip an empty / non existing slot in inventory
+	    Lebron->unequip(18);
+	    Lebron->unequip(3);
+	    std::cout << std::endl;
+	    Lebron->use(1, *Magic);
+	    Lebron->unequip(1); // Unequip a valid slot in inventory
+	    Lebron->use(1, *Magic);
+	    std::cout << std::endl; 
 
-		// /*Freeing memory, checking the order of destructors*/
+		/*Freeing memory, checking the order of destructors*/
 		
-	    // std::cout << GREEN "DESTRUCTORS:" << std::endl;
-	    // std::cout << "---------------------------------------------------" RESET << std::endl;
-	    // delete Kobe;
-	    // delete Lebron;
-	    // delete materia_book;
-	    // delete Magic;
-	    // delete Magic_copy;
-	    // std::cout << std::endl;
+	    std::cout << GREEN "DESTRUCTORS:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+	    delete Kobe;
+	    delete Lebron;
+	    delete materia_book;
+	    delete Magic;
+	    delete Magic_copy;
+	    std::cout << std::endl;
 	}
     { 
 	    std::cout << std::endl << RED "---------------------------------------------------"<< std::endl;

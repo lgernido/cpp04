@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 14:48:10 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 08:39:29 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ void Brain::setIdeas(std::string idea)
 {
     for (int i = 0; i < 100; i++)
     {
-        if (this->ideas[i].compare("I have no idea what to do") != 0)
-            i++;
-        else
+        if (this->ideas[i].compare("I have no idea what to do") == 0)
         {
             this->ideas[i] = idea;
             break;

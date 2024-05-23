@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/22 14:21:23 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 08:44:39 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,18 @@ int main(void)
         Dog* doggo = new Dog();
 
         doggo->setIdeas("Attack the postman");
+        doggo->setIdeas("Poop on the carpet");
         doggo->makeSound();
         std::cout << RED << BOLD << doggo->getIdeas(0) << RESET << std::endl;
         std::cout << std::endl;
-        std::cout << GREEN << BOLD << doggo->getIdeas(1) << RESET << std::endl;
+        std::cout << RED << BOLD << doggo->getIdeas(1) << RESET << std::endl;
+        std::cout << std::endl;
+        std::cout << GREEN << BOLD << doggo->getIdeas(2) << RESET << std::endl;
         std::cout << std::endl;
 
         delete doggo;
 	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
         
     }
-
     return 0;
 }
