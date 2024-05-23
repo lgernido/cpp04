@@ -46,7 +46,7 @@ WrongCat::WrongCat(std::string type)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 WrongCat& WrongCat::operator=(const WrongCat& aWrongCat)
 {
@@ -59,8 +59,8 @@ WrongCat& WrongCat::operator=(const WrongCat& aWrongCat)
 
 /*PUBLIC METHODS*/
 
-// void WrongCat::makeSound(void) const
-// {
-//     std::cout << MAGENTA << BOLD << "* soft meowing and purring *" << RESET << std::endl;
-//     std::cout << std::endl;
-// }
+void WrongCat::makeSound(void) const
+{
+    std::cout << MAGENTA << BOLD << "* soft meowing and purring *" << RESET << std::endl;
+    std::cout << std::endl;
+}

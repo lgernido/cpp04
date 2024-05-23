@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/23 08:44:39 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:23:02 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,38 @@ int main(void)
 	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
         
     }
+    {
+        std::cout << GREEN <<"TESTING DEEP COPY:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+
+        Dog basic;
+        basic.setIdeas("I am a smart dog");
+        std::cout << RED << BOLD << basic.getIdeas(0) << RESET << std::endl;
+        std::cout << std::endl;
+        {
+            Dog still_basic(basic);
+            std::cout << RED << BOLD << still_basic.getIdeas(0) << RESET << std::endl;
+            std::cout << std::endl;
+        }
+        std::cout << RED << BOLD << basic.getIdeas(0) << RESET << std::endl;
+        std::cout << std::endl;
+    }
+    {
+	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
+        std::cout << GREEN <<"TESTING DEEP COPY WITH ASSIGNMENT OPERATOR:" << std::endl;
+	    std::cout << "---------------------------------------------------" RESET << std::endl;
+        Cat basic;
+        basic.setIdeas("I am a cute cat");
+        std::cout << RED << BOLD << basic.getIdeas(0) << RESET << std::endl;
+        std::cout << std::endl;
+        {
+            Cat still_basic = basic;
+            std::cout << RED << BOLD << still_basic.getIdeas(0) << RESET << std::endl;
+            std::cout << std::endl;
+        }
+        std::cout << RED << BOLD << basic.getIdeas(0) << RESET << std::endl;
+        std::cout << std::endl;
+    }
+	std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
     return 0;
 }

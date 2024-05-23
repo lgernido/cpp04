@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:19:11 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 13:23:24 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:24:19 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Cat : public Animal
 
         Cat(std::string type);
         void makeSound(void) const;
+        std::string getIdeas(int index);
+        void setIdeas(std::string idea);
 
     protected :
 

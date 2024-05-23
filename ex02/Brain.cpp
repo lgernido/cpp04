@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:34:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 14:48:10 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:29:44 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,22 @@ Brain::~Brain()
 //Copy constructor
 Brain::Brain(const Brain& aBrain)
 {
-    // this->ideas = aBrain.getIdeas();
-    (void)aBrain;
+    *this = aBrain;
     std::cout << BOLD << "Brain" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
 }
 
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Brain& Brain::operator=(const Brain& aBrain)
 {
     if (this == &aBrain)
         return (*this);
-    
+    for (int i = 0; i < 100; i++)
+    {
+        this->ideas[i] = aBrain.ideas[i];
+    }
     return(*this);
 }
 
@@ -66,9 +68,7 @@ void Brain::setIdeas(std::string idea)
 {
     for (int i = 0; i < 100; i++)
     {
-        if (this->ideas[i].compare("I have no idea what to do") != 0)
-            i++;
-        else
+        (this->ideas[i].compare("I have no idea what to do") == 0)
         {
             this->ideas[i] = idea;
             break;

@@ -46,7 +46,7 @@ WrongCat::WrongCat(std::string type)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 WrongCat& WrongCat::operator=(const WrongCat& aWrongCat)
 {

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:18:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/20 14:44:05 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:32:14 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ Dog::~Dog()
 }
 
 //Copy constructor
-Dog::Dog(const Dog& aDog)
+Dog::Dog(const Dog& aDog) : Animal(aDog)
 {
+    this->brain = new Brain(*aDog.brain);
     this->type = aDog.getType();
     std::cout << BOLD << "Dog" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
@@ -49,7 +50,7 @@ Dog::Dog(std::string type)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Dog& Dog::operator=(const Dog& aDog)
 {
@@ -57,6 +58,9 @@ Dog& Dog::operator=(const Dog& aDog)
         return (*this);
     
     this->type = aDog.getType();
+    if (this->brain != NULL)
+        delete (this->brain);
+    this->brain = new Brain(*aDog.brain);
     return(*this);
 }
 

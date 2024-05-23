@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:28:55 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/23 08:35:58 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:36:48 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,12 @@ int main(void)
         std::cout << GREEN <<"TESTING THE WRONG ANIMAL:" << std::endl;
 	    std::cout << "---------------------------------------------------" RESET << std::endl;
         const WrongAnimal* meta = new WrongAnimal();
-        const Animal* j = new Dog();
-        const WrongCat* i = new WrongCat();
-        std::cout << j->getType() << " " << std::endl;
+        const WrongAnimal* i = new WrongCat();
         std::cout << i->getType() << " " << std::endl;
         i->makeSound(); //will output wrong sound
-        j->makeSound();
         meta->makeSound();
         
         delete meta;
-        delete j;
         delete i;
 	    std::cout << GREEN << "---------------------------------------------------" RESET << std::endl;
     }

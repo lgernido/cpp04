@@ -57,3 +57,11 @@ WrongCat& WrongCat::operator=(const WrongCat& aWrongCat)
     this->type = aWrongCat.getType();
     return(*this);
 }
+
+/*PUBLIC METHODS*/
+
+void WrongCat::makeSound(void) const
+{
+    std::cout << MAGENTA << BOLD << "* soft meowing and purring *" << RESET << std::endl;
+    std::cout << std::endl;
+}

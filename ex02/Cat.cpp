@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:18:42 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/18 12:37:03 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:30:17 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Cat::~Cat()
 //Copy constructor
 Cat::Cat(const Cat& aCat)
 {
+    this->brain = new Brain(*aCat.brain);
     this->type = aCat.getType();
     std::cout << BOLD << "Cat" << RESET << ITALIC << " copy constructor" << RESET << " called" << std::endl;
     std::cout << std::endl;
@@ -49,7 +50,7 @@ Cat::Cat(std::string type)
     std::cout << std::endl;
 }
 
-/*OPERATOR OVERLOARD*/
+/*ASSIGNEMENT OPERATOR*/
 
 Cat& Cat::operator=(const Cat& aCat)
 {
@@ -57,6 +58,9 @@ Cat& Cat::operator=(const Cat& aCat)
         return (*this);
     
     this->type = aCat.getType();
+    if (this->brain != NULL)
+        delete (this->brain);
+    this->brain = new Brain (*aCat.brain);
     return(*this);
 }
 
@@ -66,4 +70,14 @@ void Cat::makeSound(void) const
 {
     std::cout << MAGENTA << BOLD << "* soft meowing and purring *" << RESET << std::endl;
     std::cout << std::endl;
+}
+
+std::string Cat::getIdeas(int index)
+{
+    return (this->brain->getIdeas(index));
+}
+
+void Cat::setIdeas(std::string idea)
+{
+    this->brain->setIdeas(idea);
 }
